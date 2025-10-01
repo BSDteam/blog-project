@@ -8,4 +8,4 @@ def home_view(request):
     return HttpResponse("<h1>Добро пожаловать в мой блог!</h1>")
 
 def about(request):
-    return HttpResponse("<h1>Добро пожаловать не туда!</h1>")
+    return HttpResponse("<h1>Добро пожаловать туда!</h1>")
