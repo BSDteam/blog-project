@@ -8,6 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
+    author =  models.CharField(max_length=100, default="No Author")
 
     def __str__(self):
         return self.title
