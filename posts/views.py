@@ -20,3 +20,10 @@ def post_list_view(request):
         html += f"<li><strong>{post.title}</strong>: {post.content[:50]}...</li>"
     html += "</ul>"
     return HttpResponse(html)
+
+def post_details_view(request, post_id):
+    post = Post.objects.get(id=post_id)
+    html = "<h1>Все посты</h1><ul>"
+    html += f"<li><strong>{post.title}</strong>: {post.content[:50]}...</li>"
+    html += "</ul>"
+    return HttpResponse(html)

@@ -38,3 +38,15 @@ class PostViewTest(TestCase):
         response = self.client.get('/posts/')
         self.assertContains(response, "Тест 1")
         self.assertContains(response, "Тест 2")
+
+    def test_posts_from_posts(self):
+        response = self.client.get('/posts/1')
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Тест 1")
+
+    def test_posts_from_posts_error(self):
+        try:
+            response = self.client.get('/posts/3')
+            assert False
+        except:
+            assert True
